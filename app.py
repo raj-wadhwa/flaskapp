@@ -20,20 +20,20 @@ conn = mysql.connect()
 
 @app.route("/")
 def main():
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/showSignUp')
 def showSignUp():
-    json.dumps({'html':'<span>All fields good !!</span>'})
-    return render_template('signup.html')
+    # json.dumps({'html':'<span>All fields good !!</span>'})
+    return render_template('register.html')
 
 @app.route('/signUp', methods=['POST'])
 def signUp():
     # create user code will be here !!
     # read the posted values from the UI
-    _name = request.form['inputName']
-    _email = request.form['inputEmail']
-    _password = request.form['inputPassword']
+    _name = request.form['firstName']
+    _email = request.form['middleName']
+    _password = request.form['lastName']
     # validate the received values
     if _name and _email and _password:
         json.dumps({'html':'<span>All fields good !!</span>'})
